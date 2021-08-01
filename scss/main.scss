@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+// Reset CSS
+html {
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+body,
+h1,
+h2,
+p {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+// COLOR VARIABLES
+:root {
+  // PRIMARY COLORS
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 96%, 73%);
+  --primary-blue: hsl(212, 86%, 64%);
+
+  // NEUTRAL
+  --blue-dark: hsl(234, 12%, 34%);
+  --blue-gray: hsl(229, 6%, 66%);
+  --gray-light: hsl(0, 0%, 98%);
+}
+
+// HEADER STYLING
+header {
+  text-align: center;
+  padding: 3em;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-weight: 200;
+  color: var(--blue-dark);
+}
+
+header .header-bold {
+  font-weight: 600;
+}
+
+.content {
+  font-weight: 200;
+  color: var(--blue-gray);
+}
+// CARD SECTION STYLING
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1em 2.25em;
+  margin: 3em auto;
+  border-radius: 10px;
+  box-shadow: 
+  0 1px 2px rgba(0,0,0,0.07), 
+  0 2px 4px rgba(0,0,0,0.07), 
+  0 4px 8px rgba(0,0,0,0.07), 
+  0 8px 16px rgba(0,0,0,0.07),
+  0 16px 32px rgba(0,0,0,0.07), 
+  0 32px 64px rgba(0,0,0,0.07);
+  max-width: 400px;
+  height: 250px;
+}
+
+.card h2 {
+  padding: 0.8em 0;
+}
+.card-heading {
+  font-weight: 600;
+  color: var(--blue-dark);
+}
+.card-cyan {
+  border-top: 3px solid var(--primary-cyan);
+}
+.card-red {
+  border-top: 3px solid var(--primary-red);
+}
+.card-orange {
+  border-top: 3px solid var(--primary-orange);
+}
+.card-blue {
+  border-top: 3px solid var(--primary-blue);
+}
+
+// ICON STYLING
+img {
+  width: 55px;
+  align-self: flex-end;
+  margin: 2em 0;
+}
+
+// ANIMATIONS
+.card:hover {
+  cursor: pointer;
+  animation: shake 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+// MEDIA QUERIES 
+@media only screen and (min-width: 1440px) {
+  body {
+    font-size: 100%;
+    overflow: hidden;
+  }
+  header {
+    padding: 5em;
+  }
+  // FOOTER STYLING
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2em;
+  }
+
+  section.cards {
+    position: absolute;
+    bottom: 0;
+    top: 50px;
+    left: 0;
+    right: 0;    
+  }
+
+  section.cards > .container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .card {
+    margin: 1em;
+  }
+
+  // ALIGNS TWO CARDS IN THE MIDDLE
+  .middle {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0;
+  }
+  .container > .card:first-child,
+  .container > .card:nth-child(3) {
+    align-self: center;
+  }
+}
